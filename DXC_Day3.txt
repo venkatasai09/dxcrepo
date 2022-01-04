@@ -1,0 +1,505 @@
+Day 3:
+
+Microfocus ALM:
+
+- Application Lifecycle Management, which is web based tool
+- Test Management tool , help us to manage complete testing related activities
+- Requirement gathering, Test plan, Test case writing, test execution(manual & automation), defect reporting, test report creation, RTM
+- easy to manage and track all the work easily.
+
+- product of microfocus , which involved cost, license product
+
+Why use ALM?
+
+- it connects various stakeholders (devlopers, BA, project manager, Tester) to communicate , assign the task easily..
+
+- centralized tool to track the work easily
+
+Microfocus ALM workflow:
+
+Release Module:
+
+	- plan for releases and cycles
+	- for each release , we have number of cycles.
+
+Exmaple:
+
+	Consider 100 requirements, will be released in 10 times
+
+First 10 req - release1
+
+10 req - release2
+
+10 req - release3... release 10
+
+Plan for release1: date is 3 to 10 Jan'22
+plan for cycles:
+	cycle1: execution all test case ( 3- 5 jan)
+	cycle2: re-testing(7th jan)
+	cycle3: regression testing(9th jan)
+
+Regression testing:
+
+login<-->search
+
+Test login module - 2 defects identified
+
+Test Search module - 0 defect
+
+Total = 2 defects (fixed by dev)
+
+Fixes happend to login module, we have to ensure there is no new defects have introducted in both login and search module.
+We test again login and search modules together is called regression testing.
+
+Requirement Module:
+
+	- create/upload requirements for release1
+
+Test Planning Module
+	- Decide whether are we going to do manual or automaton, will be planned in Test plan module.
+
+	- create/upload test case
+
+Test execution/Test lab Module
+	- execute test case , define status pass/fail
+
+Defect Module
+	- privoide defect details 
+
+Reports can be created from any module.
+ensure every module activities need to be linked with each other for easy tracking.
+
+Requirement coverage status:
+
+passed
+failed
+not covered: yet to plan/design
+not completed: partial test cases covered
+blocked: not able to test
+no run: yet to execute
+
+---------------------------------------------
+unix:
+- It is operating system
+- set of program/commands, help us to interact with cmputer
+- secured 
+- not provided with GUI
+- more than one user can access unix platfirm(multi user)
+- multitask(more than one task can be performed at same time)
+
+kernal: heart of unix, helps to do memory management, task scheduling, file management etc
+
+shell: help us to process yu request. type command in terminal, shell interprets command and calls the program that you want to perform.
+
+eg) ls - list you all the files from directory
+
+Files & directories:
+
+All the data organized into files
+All the files organized into directory
+All these directories are into tree strcuture called file system.
+
+commands:
+
+1. whoami -> who are you?
+2. users/who -> wh are all logged into same unix platform?
+3. logout -> logout the system after the task completed. ensure no one else wrking on files
+4. halt/shutdown -> shutdown the sysem immediately
+
+File Management:
+
+1. ls - listing files
+2. ls -l -> vlist of all files with more infrmation
+3. ls -a -> list all the files alng with hidden files
+4. ls a*.txt -> list all files starts with a
+5. vi filename -> create file, press i from keyboard to enter text 
+6. esc -> to come out from edit mode
+7. edit file:
+
+	vi filename -> press i
+	
+	move cursr her and there,
+	i- move to right
+	h- move to lefe
+	k - move upside in file
+	j - move downside in the file
+
+Come out frm vi editoe,
+
+Esc -> enter :q! - quit without saving
+Esc -> type :x! -> quit with saving
+	
+8. display content file
+
+	cat filename
+9. count number of lines, words, char 
+	wc filename
+10. copying files
+	cp source desti
+
+ex:
+	cp filename copyfile
+11. Renaming files
+	mv filename newfile
+	
+ex:
+	mv test1 login
+12. deleting files
+	rm newfile
+	rm newfile1 newfile2 newfile3
+
+Directory management:
+
+		parent direc(/)
+Directory1	 directry2
+	- files     - file2
+	- files     - file2
+	- files
+
+1. go to home directory
+	cd ~
+2. go to last directory
+	cd -
+3. to list files in specfic directory
+	ls dirname
+4. create directory
+	mkdir dirname
+5. remove directory
+	rmdir dirname
+6. changing directory
+	cd dirname
+
+	cd directory2
+7. renamin  directory
+	mv directory1 directory3
+
+Shell Script:
+
+- set of commands that written on file and run them together.
+- designed fr unix users manage files, program, execute them effectively.
+- automate administrative task
+
+Writing shell script:
+
+print text,
+
+	echo "hello"
+
+variables:
+
+to process the dAta, data must store in cmputer memory.
+memory divided into small location 
+each location unique number called memory address, which is used to hold data
+
+2 types of variables,
+1. system vari - capital letters
+eg)
+HOME
+OSTYPE
+
+2. user-defined variable - small leters
+name=saranya
+
+Shell Scripting:
+
+echo "Hello WorlD"
+
+name=saranya;
+echo "Hello $name";
+
+#if condition
+
+if [ 35 -gt 0 ]
+then
+   echo "greater"
+fi
+
+#if else condition
+
+if [ 35 -lt 0 ]
+then
+   echo "greater"
+else
+    echo "lesser"
+fi
+
+-------------------------------------
+If elseif statement:
+
+
+if [ expression1 ]
+then
+   statement1
+   statement2
+   .
+   .
+elif [ expression2 ]
+then
+   statement3
+   statement4
+   .
+   .
+else
+   statement5
+fi
+
+
+a=10
+b=20
+
+if [ $a -gt $b ]
+then
+    echo "a is greater"
+elif [ $a -lt $b ]
+then
+    echo "b is greater"
+else
+   echo "a and b are equal"
+fi
+
+-----------------------------------------
+
+String comparision:
+
+str1=str2 => true if str1 and str2 are equal
+str1!=str2 => true if str1 , 2 are not equal
+
+Numeric comparision:
+
+-eq -> eual to
+-ne -> not equal to
+-gt -> greater then
+-lt -> lesser than
+-ge -> greater than equal to
+-le -> lesser than or equal to
+
+------------------------------------
+looping statement: iterate same statement for multiple number oftimes
+
+for var in n.of times
+do
+----
+-----
+done
+
+for (( i = 0; i < 5; i++ )); do
+    echo "hello $i"
+done
+
+for i in 1 2 3 4 5 ; do
+    echo "hello $i"
+done
+---------------------------------------
+while loop: loop executes until the condition is true.
+
+a=0
+# -lt is less than operator
+  
+#Iterate the loop until a less than 10
+while [ $a -lt 10 ]
+do 
+    # Print the values
+    echo $a
+      
+    # increment the value
+    a=`expr $a + 1`
+done
+--------------------------------------
+function:
+
+procedure or routine
+reuse the function for multiple times
+
+display()
+{
+    echo "hello saranya"
+}
+
+display
+display 
+display
+----------------------------------------
+
+Datewarehouse & ETL:
+
+
+DWH: It is a huge DB, for reporting and data analysis.
+
+collect raw data from different source, gets loaded into datawarehouese and generate reporting.
+
+Ex: Retail company
+
+ecommerce wensite
+Point of sale
+sales/marketting etc
+
+all this differnt surce of data gets loded into DWH and generate revence report for a given day?
+
+while loading of data from source to DB, certain processes to be followed , that is ETL(extract, transform, load)
+
+extract the information from different sources like flat files, excel, db and should get transformed (cleaning of data, transform as similar to DWH) and loaded into DB.
+
+DWH - stores historical data(ex 10 yrs of data), so it is very time consuming process to generate report. so datamarts will be created from DWH.
+
+datamart will have records with business line i.e) department db, staff db
+
+difference between OLTP & OLAP:
+
+OLTP (DB): DATa processing
+OLAP(DWH): Data Analysis
+
+daily transaction are source of OLTP
+different OLTP are sources of OLAP
+
+OLTP queries are insert, update, delete, select
+OLAP queries are Select
+
+response time is in ms in OLTP
+response time will be in mins in OLAP
+
+Understand sql is important to work with DB.
+
+-- create a table
+CREATE TABLE students (
+  id INTEGER PRIMARY KEY,
+  name TEXT NOT NULL,
+  gender TEXT NOT NULL
+);
+-- insert some values
+INSERT INTO students VALUES (1, 'Ryan', 'M');
+INSERT INTO students VALUES (2, 'Joanna', 'F');
+-- fetch some values
+select * from students;
+select * from students where id=1;
+select * from students where id<=10;
+select * from students where id=2 AND gender='F';
+select * from students where id=2 OR gender='M';
+select * from students where name like '_y%';
+select * from students where id is null;
+select * from students where id is not null;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
